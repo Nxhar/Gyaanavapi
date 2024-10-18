@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Javascript Quiz</title>
+<link rel="stylesheet" href="mcqpage.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Seymour+One&display=swap"
+  rel="stylesheet"
+/>
+<script
+  src="https://kit.fontawesome.com/c0c1f0b98f.js"
+  crossorigin="anonymous"
+></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+
+</head>
+<body>
+  <!-- <div class="homeBtn">
+    <button><a  href="../index.html">Back to home<i class="fas fa-home"></i>
+    </a></button>
+</div> -->
+<header class="header">
+  <div class="left-title"><b>Learning Style Analysis Quiz</b></div>
+  <div class="right-title">Total Questions: <span id="tque"></span></div>
+  <!-- <div class="clearfix"></div> -->
+</header>
+
+<div class="content">
+  <div id="result" class="quiz-body">
+    <form name="quizForm" onSubmit="">
+      <fieldset class="form-group">
+        <h4><span id="qid">1.</span> <span id="question"></span></h4>
+        <div class="option-block-container" id="question-options">
+        </div> <!-- End of option block -->
+      </fieldset>
+
+      <div class="prevNextBtns">
+        <button name="previous" id="previous" class="btn buttons">Previous</button>
+        &nbsp;
+        <button name="next" id="next" class="btn buttons">Next</button>
+      </div>
+    </form>
+  </div>
+  <!-- <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="result" class="quiz-body">
+          <form name="quizForm" onSubmit="">
+            <fieldset class="form-group">
+              <h4><span id="qid">1.</span> <span id="question"></span></h4>
+              <div class="option-block-container" id="question-options">
+              </div>
+            </fieldset>
+
+            <div class="prevNextBtns">
+              <button name="previous" id="previous" class="btn buttons">Previous</button>
+              &nbsp;
+              <button name="next" id="next" class="btn buttons">Next</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>
+  <!-- <div  id="resultButton" class="resultButtonHidden"><button><a href="./results.html">End Test</a></button></div> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+  <script src="mcqpage.js"></script>
+</body>
+</html>

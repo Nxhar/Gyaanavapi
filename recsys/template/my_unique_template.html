@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Recommendation System</title>
+    <link rel="stylesheet" href="C:\Users\ritsi\OneDrive\Desktop\recsys\static\css\style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="homeBtn">
+        <button>
+            <a href="/">Back to home <i class="fas fa-home"></i></a>
+        </button>
+    </div>
+    <div class="outerContainer">
+        <h1>Personalized Lecture Recommendations</h1>
+
+        <div class="result-container">
+            <div class="content">
+                <label for="user">Select User:</label>
+                <select id="user">
+                    <option value="user1">Slow Learner</option>
+                    <option value="user2">Average Learner</option>
+                    <option value="user3">Fast Learner</option>
+                </select>
+                <button onclick="getRecommendations()">Get Recommendations</button>
+
+                <div id="recommendations" class="recommendations"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function getRecommendations() {
+            const user = document.getElementById('user').value;
+            fetch('/recommend', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ user }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                const recommendationsDiv = document.getElementById('recommendations');
+                recommendationsDiv.innerHTML = '';
+
+                if (data.length > 0) {
+                    data.forEach(video => {
+                        const videoDiv = document.createElement('div');
+                        videoDiv.className = 'video';
+                        videoDiv.innerHTML = `<h3>${video.title}</h3><a href="${video.url}" target="_blank">${video.url}</a>`;
+                        recommendationsDiv.appendChild(videoDiv);
+                    });
+                } else {
+                    recommendationsDiv.innerHTML = '<p>No recommendations available.</p>';
+                }
+            });
+        }
+    </script>
+    <style>
+        html {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #003366 0%, #BF0A30 100%);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeBtn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  width: auto;
+}
+
+.homeBtn button {
+  background-color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  outline: none;
+  border: 2px solid #003366; /* Midnight blue */
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.homeBtn button a {
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #003366; /* Midnight blue */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-transform: capitalize;
+}
+
+.homeBtn button:hover {
+  background-color: #003366; /* Midnight blue */
+}
+
+.homeBtn button a:hover {
+  color: #BF0A30; /* Red text color on hover */
+}
+
+h1 {
+  color: white;
+  font-family: 'Space Mono', monospace;
+}
+
+.outerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #ffffff;
+  height: 60vh;
+  width: 40vw;
+  border-radius: 10px;
+  box-shadow: 5px 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for the card */
+  color: white;
+  position: relative;
+}
+
+.content {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.content label {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.result-container select {
+  font-size: 1em;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  color: #333;
+}
+
+.result-container button {
+  font-size: 1em;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #4a90e2;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 10px;
+}
+
+.result-container button:hover {
+  background-color: #357abd;
+}
+
+.recommendations {
+  margin-top: 20px;
+}
+
+.video {
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: left;
+}
+
+.video h3 {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.video a {
+  color: #4a90e2;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.video a:hover {
+  text-decoration: underline;
+}
+
+    </style>
+</body>
+</html>

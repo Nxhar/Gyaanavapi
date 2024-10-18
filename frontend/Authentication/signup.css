@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background: radial-gradient( rgb(245, 247, 253) 0%,#382f85 180% ); /* Diagonal gradient for a modern look */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes full height */
+}
+
+strong,
+p {
+    margin: 0;
+}
+.homeBtn button {
+    background-color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 1rem;
+    outline: none;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    transition: all 200ms ease-in-out;
+    border: 2px solid #003366; /* Midnight blue */
+    cursor: pointer;
+}
+
+.homeBtn button a {
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #003366; /* Midnight blue */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-transform: capitalize;
+}
+
+
+.homeBtn button i {
+    font-size: 1rem;
+}
+
+.homeBtn button:hover {
+    background-color: #003366; /* Midnight blue */
+}
+
+.homeBtn button:hover a {
+    color: white;
+}
+
+strong.section_header {
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    text-transform: capitalize;
+    font-family: 'Roboto', sans-serif; /* Changed to match previous code */
+    color: rgb(2, 2, 43); /* White */
+}
+
+/* form wrapper styling */
+.form_wrapper {
+    position: relative; /* Changed to relative for better alignment */
+    width: 60%; /* Increased width for better fit */
+    max-width: 700px; /* Increased max-width for better responsiveness */
+    margin: 2rem auto; /* Center horizontally */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: white;
+    padding: 40px; /* Increased padding for better spacing */
+    border-radius: 1.5rem; /* Retained border radius */
+    box-shadow: 1px 2px 20px rgba(0,0,0,0.2);
+    gap: 30px; /* Retained gap */
+    background: linear-gradient(135deg, #003366 0%, #BF0A30 100%); /* Black */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px; /* Retained gap */
+}
+
+.form .field {
+    width: 100%;
+    display: flex;
+    gap: 1rem; /* Retained gap */
+}
+
+.field input {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    border-bottom: 1px solid rgb(73, 73, 73);
+}
+
+.class_wrapper {
+    border-left: 1px solid rgb(209, 209, 209);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.class_wrapper p {
+    font-size: 3rem;
+    color: white; /* White */
+}
+
+.class_wrapper strong {
+    font-size: 2.5rem; /* Adjusted font size */
+    font-family: 'Roboto', sans-serif; /* Changed to match previous code */
+    color: white; /* White */
+}
+
+/* Button styling */
+.buttons_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.buttons_wrapper button {
+    background: white; /* Midnight blue */
+    display: inline;
+    font-size: 1rem;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    padding: 0.75rem 1.25rem; /* Increased padding for better appearance */
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    font-weight: 700;
+    color: blue;
+}
+
+.buttons_wrapper button:hover {
+    background: #BF0A30; /* Red */
+}
+
+.buttons_wrapper a {
+    color: white;
+}

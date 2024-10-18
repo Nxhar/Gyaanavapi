@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background: radial-gradient( rgb(245, 247, 253) 0%,#382f85 180% ); /* Diagonal gradient for a modern look */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes full height */
+}
+
+strong,
+p {
+    margin: 0;
+}
+
+.homeBtn button {
+    background-color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 1rem;
+    outline: none;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    transition: all 200ms ease-in-out;
+    border: 2px solid #003366; /* Midnight blue */
+    cursor: pointer;
+}
+
+.homeBtn button a {
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #003366; /* Midnight blue */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-transform: capitalize;
+}
+
+.homeBtn button i {
+    font-size: 1rem;
+}
+
+.homeBtn button:hover {
+    background-color: #003366; /* Midnight blue */
+}
+
+.homeBtn button:hover a {
+    color: white;
+}
+
+strong.section_header {
+    width: 100%;
+    text-align: center;
+    font-size: 4rem;
+    text-transform: capitalize;
+    font-family: 'Poppins', sans-serif;
+    color: rgb(4, 4, 41); /* White */
+    margin: 2rem 0; /* Space above and below */
+}
+
+.form_wrapper {
+    position: relative; /* Change to relative for better alignment */
+    width: 70%; /* Adjusted width to make it smaller */
+    max-width: 800px; /* Maximum width for better responsiveness */
+    margin: 0 auto; /* Center horizontally */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: white; /* White */
+    padding: 50px; /* Reduced padding */
+    border-radius: 3rem; /* Reduced border radius */
+    box-shadow: 1px 2px 20px rgba(0, 0, 0, 0.2);
+    gap: 30px; /* Reduced gap */
+    background: linear-gradient(135deg, #003366 0%, #BF0A30 100%); /* Black */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+}
+
+.form .field {
+    width: 100%;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.field input {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: white; /* White */
+    font-size: 1rem;
+    border-bottom: 1px solid white;
+}
+
+.class_wrapper {
+    border-left: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.class_wrapper p {
+    font-size: 2rem;
+    color: white; /* White */
+}
+
+.class_wrapper strong {
+    font-size: 3rem;
+    font-family: 'Poppins', sans-serif;
+    color: white; /* White */
+}
+
+.buttons_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.buttons_wrapper button {
+   background:  white;
+    display: inline;
+    font-size: 1rem;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    font-weight: 700;
+    color: black; /* White */
+}
+
+.buttons_wrapper button:hover {
+    background: rgb(77, 77, 167); /* Red */
+}
+
+.buttons_wrapper a {
+    color: white; /* White */
+}

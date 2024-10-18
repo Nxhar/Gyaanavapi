@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: black;
+  box-sizing: border-box;
+  padding: 0;
+  background: radial-gradient( rgb(245, 247, 253) 0%,#382f85 180% ); /* Midnight blue to red gradient */
+  position: relative;
+  font-family: 'Roboto', sans-serif; /* Updated font */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-family: 'Space Mono', sans-serif; /* Consistent with the theme */
+  font-size: 4rem; /* Adjust size as needed */
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  padding: 1rem 2rem; /* Padding inside the box */
+  border-radius: 1rem; /* Rounded corners */
+  background: linear-gradient(135deg, #003366,#BF0A30 ); /* Midnight blue background for the box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for 3D effect */
+  border: 3px solid black; /* Red border to highlight */
+  position: relative; /* For positioning pseudo-elements */
+  z-index: 10; /* Ensures it appears above other content */
+}
+.homeBtn {
+  position: absolute; /* Allows positioning within the parent container */
+  top: 1rem; /* Adjust as needed to position vertically */
+  left: 1rem; /* Aligns button to the left */
+  display: flex;
+  justify-content: flex-start; /* Aligns button to the left */
+  width: auto; /* Adjust width to fit the button */
+}
+
+
+.homeBtn button {
+  align-self: start;
+  background-color: white; 
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  outline: none;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  transition: all 200ms ease-in-out;
+  border: 2px solid #003366; /* Midnight blue */
+  cursor: pointer;
+}
+
+.homeBtn button a {
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #003366; /* Midnight blue */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-transform: capitalize;
+}
+
+.homeBtn button:hover {
+  cursor: pointer;
+  background-color: white; /* Midnight blue background */
+}
+
+.homeBtn button a:hover {
+  color: #BF0A30; /* Red text color on hover */
+}
+
+/* Start Now button styling */
+.start_now_button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start_now_button button {
+  background-color: #003366; /* Midnight blue background */
+  padding: 0.5rem 5rem;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  font-weight: 300;
+  border-radius: 2rem;
+  color: white;
+  font-family: 'Roboto', sans-serif; /* Consistent with font */
+}
+
+.start_now_button button .quiz-link {
+  color: white;
+  text-decoration: none;
+}
+
+.start_now_button button .quiz-link:hover {
+  color: #BF0A30; /* Red color on hover */
+}
